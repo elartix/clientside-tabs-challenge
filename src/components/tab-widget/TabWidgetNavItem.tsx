@@ -18,7 +18,7 @@ export const TabWidgetNavItem = memo<ITabWidgetNavItem>(function TabWidgetNavIte
   className
 }) {
 
-  const { state: { activeTab, isLoading }, setTabState, triggerTabChange } = useTabWidgetContext();
+  const { state: { activeTab }, setTabState, triggerTabChange } = useTabWidgetContext();
 
   const isActive = useMemo(
     () => {
@@ -57,8 +57,7 @@ export const TabWidgetNavItem = memo<ITabWidgetNavItem>(function TabWidgetNavIte
   return (<>
     <li role="presentation"
         className={cn('tab-widget__nav-item', className, {
-          'active': isActive,
-          'loading': isLoading
+          'active': isActive
         })}
     >
       <a className={cn('tab-widget__nav-item-tab', {

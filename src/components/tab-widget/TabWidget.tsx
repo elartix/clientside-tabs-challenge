@@ -16,7 +16,6 @@ import { useStateWithCallbackLazy } from 'use-state-with-callback';
 
 interface ITabWidgetProps {
   active?: string,
-  isLoading?: false;
   className?: string;
   onTabChange?: Dispatch<ITabWidgetContextState>,
 }
@@ -56,7 +55,7 @@ export const TabWidget = memo<PropsWithChildren<ITabWidgetProps>>(function TabWi
           if (!isValidElement(child)) {
             return child;
           }
-          return cloneElement(child, {  }); //isActive, onClick
+          return cloneElement(child, {  });
         })}
       </div>
     </TabWidgetContext.Provider>

@@ -4,13 +4,11 @@ import { createContext, Dispatch, SetStateAction, useContext } from 'react';
 export interface ITabWidgetContextState {
   section : Nullable<string|number>;
   activeTab: Nullable<string|number>;
-  isLoading?: boolean;
 }
 
 export const defaultTabContextState: ITabWidgetContextState = {
   section: null,
   activeTab: null,
-  isLoading: false,
 }
 
 export interface ITabWidgetContext {

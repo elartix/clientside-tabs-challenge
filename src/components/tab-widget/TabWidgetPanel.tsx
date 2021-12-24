@@ -4,12 +4,11 @@ import React, {
   useMemo,
   Children,
   ReactNode,
-  useContext,
   cloneElement,
   isValidElement
 } from 'react'
 
-import { ITabWidgetContext, TabWidgetContext } from './TabWidget.context';
+import { useTabWidgetContext } from './TabWidget.context';
 
 export interface ITabWidgetPanelProps {
   section: string;
@@ -22,7 +21,8 @@ export const TabWidgetPanel = memo<ITabWidgetPanelProps>(function TabWidgetPanel
   className,
   children
 }) {
-  const { state: { activeTab, isLoading} } = useContext(TabWidgetContext) as ITabWidgetContext;
+
+  const { state: { activeTab } } = useTabWidgetContext();
 
   const isActive = useMemo(
     () => {
@@ -34,8 +34,7 @@ export const TabWidgetPanel = memo<ITabWidgetPanelProps>(function TabWidgetPanel
   return (<>
     <div id={`#tab_${section}`}
          className={cn('tab-widget__content-pane', className, {
-           'active': isActive,
-           'loading': isLoading
+           'active': isActive
          })}
     >
       { Children.map(children, (child, index) => {

@@ -18,12 +18,10 @@ export const TabWidgetContent = memo<PropsWithChildren<ITabWidgetNavProps>>(func
   className,
   children
 }) {
-  const { state } = useContext(TabWidgetContext) as ITabWidgetContext;
+  // const { state } = useContext(TabWidgetContext) as ITabWidgetContext;
 
   return (<>
-    <div className={cn('tab-widget__content', className, {
-      'loading': state?.isLoading
-    })}>
+    <div className={cn('tab-widget__content', className)}>
       { Children.map(children, (child, index) => {
         if (!isValidElement(child)) {
           return child;

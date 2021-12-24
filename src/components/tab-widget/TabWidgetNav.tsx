@@ -8,8 +8,6 @@ import React, {
 } from 'react'
 
 
-import { useTabWidgetContext } from './TabWidget.context';
-
 export interface ITabWidgetNavProps {
   className?: string;
 }
@@ -19,12 +17,8 @@ export const TabWidgetNav = memo<PropsWithChildren<ITabWidgetNavProps>>(function
   children
 }) {
 
-  const { state: { isLoading } } = useTabWidgetContext();
-
   return (
-    <ul className={cn('tab-widget__nav', className, {
-      'loading': isLoading
-    })}>
+    <ul className={cn('tab-widget__nav', className)}>
       { Children.map(children, (child, index) => {
         if (!isValidElement(child)) {
           return child;
