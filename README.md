@@ -1,58 +1,44 @@
-# Clientside Tabs Challenge
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
-Thanks for your interest in applying for the Client Side Developer role at the Guardian. 
+## Available Scripts
 
-We’d like you to complete a coding task to demonstrate your coding approach, how you structure a solution and what you can do when you are allowed to be creative.
+In the project directory, you can run:
 
-We’ve set the deadline for this exercise at **two hours**. We’re interested in how you would start building a production-ready feature. Two hours may not be long enough to finish. 
+### `yarn start`
 
-After submitting your code, you will be invited to our offices to review your choices, what you prioritised and the next steps you’d take. Your code will be **the starting point for a conversation**, and it will be helpful if you could briefly highlight reasons for  your architectural choices in a README in your repo.
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## The rules
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-When completing this challenge, we encourage you to use vanilla JavaScript, HTML and CSS. You are free to use appropriate modern JavaScript libraries, build tooling and boilerplates if you prefer. 
+### `yarn test`
 
-However, please don't use:
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- the Angular framework
-- any CSS framework such as Bootstrap or Material Design
+### `yarn build`
 
-These frameworks make it difficult for us to assess your code fairly.
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## The exercise
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-Inside this repo is an incomplete **tabbed component**. We'd like you to update it to meet the requirements listed below. 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-You should implement a **tabbed component** that looks similar to the Guardian’s most recent content widget. You’ve no doubt seen one before, but just to be clear, here’s something similar to what you're aiming for:
+### `yarn eject`
 
-![Screenshot of a tabbed component](/tabbed-component.png)
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-The component will be a numbered listing of the most recent Guardian content chosen from three sections of the site: UK news, Football and Travel. Each of these sections should be represented by a tab.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-You should fetch this data asynchronously from our [Content API](https://open-platform.theguardian.com/explore/). **Please do this on the client-side.** Your solution should run in the browser alone with no runtime server-side requirements (excluding any tooling needed to build your code).
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-## Considerations
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-At the Guardian we try to build things to be lightweight, accessible, and usable across browsers, devices and network conditions. 
+## Learn More
 
-During implemetation, please choose 2 or 3 of the below considerations to focus on. Let us know which ones you have chosen in your repo's README. We will discuss all 5 considerations at the review stage.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Accessibility
-
-A great deal of web content can be made accessible simply by using semantically correct HTML elements and role attributes. We'd like you to ensure the component is accessible for our readers that rely on screen reading technology or keyboard navigation to access our content.
-
-### Browser support
-
-Our site uses modern web standards to provide the best possible reading experience for our visitors. Although we aim to be readable on all possible devices and browsers, not all are capable of running the full set of features. We'd like you to make sure your application works on older browsers as well as the latest browsers. Our [recommended browser list](https://www.theguardian.com/help/recommended-browsers) states the browsers we currently support.
-
-### No JavaScript
-
-We can't assume our JavaScript will run for all our readers, for example some may not run Javascript for accessibility reasons and others may be accessing our site in constrained environments in which our JavaScript cannot run. We'd like you to make sure your application offers a meaningful experience when JavaScript is unavailable.
-
-### Test coverage
-
-A good suite of tests for your code can give you and your colleagues confidence that no bugs have been introduced when refactoring or adding new features. We'd like you to write tests for your code that can be easily run by anyone working on it.
-
-### Reusability
-
-We'd like you to consider how your code could be recomposable into new solutions whilst retaining its internal implementation details.
+To learn React, check out the [React documentation](https://reactjs.org/).
