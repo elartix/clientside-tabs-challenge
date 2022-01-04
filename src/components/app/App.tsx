@@ -67,49 +67,49 @@ const App = memo(function App() {
     <div className="App">
       <main>
         <section className="App-content">
-          <section>
-            <TabWidget className="custom-tab-widget"
-                       active={restoredActiveTab.activeTab}
-                       onTabChange={handleTabChange}
-            >
-              <TabWidgetNav>
-                { _.map(tabList, (item) => <TabWidgetNavItem
+
+          <TabWidget className="custom-tab-widget"
+                     active={restoredActiveTab.activeTab}
+                     onTabChange={handleTabChange}
+          >
+            <TabWidgetNav>
+              { _.map(tabList, (item) => <TabWidgetNavItem
+                key={item.id}
+                id={item.id}
+                label={item.label}
+                />
+              )}
+            </TabWidgetNav>
+            <TabWidgetContent>
+              { _.map(tabList, (item) => <TabWidgetPanel
                   key={item.id}
-                  id={item.id}
-                  label={item.label}
-                  />
-                )}
-              </TabWidgetNav>
-              <TabWidgetContent>
-                { _.map(tabList, (item) => <TabWidgetPanel
-                    key={item.id}
-                    section={item.id}
-                  >
-                  { _.isEmpty(_.get(listMapData, `${item.section}`, []))
-                    ? <>
-                      <span> There are no any news </span>
-                    </>
-                    : <>
-                      <ol className={cn('list-data list-numbered', {
-                        'skeleton-loading': loading
-                      })}>
-                        { loading ? <>
-                          <li className="list-item text-hidden">
-                            <span> Loading </span>
-                          </li>
-                        </> : <>
-                            { _.map(_.get(listMapData, `${item.section}`), itemData => <li key={itemData.id} className="list-item text-hidden">
-                                <a href={itemData.webUrl} title={itemData.webTitle}> { itemData.webTitle } </a>
-                              </li>
-                            ) }
-                        </> }
-                      </ol>
-                    </>
-                  }
-                </TabWidgetPanel>) }
-              </TabWidgetContent>
-            </TabWidget>
-          </section>
+                  section={item.id}
+                >
+                { _.isEmpty(_.get(listMapData, `${item.section}`, []))
+                  ? <>
+                    <span> There are no any news </span>
+                  </>
+                  : <>
+                    <ol className={cn('list-data list-numbered', {
+                      'skeleton-loading': loading
+                    })}>
+                      { loading ? <>
+                        <li className="list-item text-hidden">
+                          <span> Loading </span>
+                        </li>
+                      </> : <>
+                          { _.map(_.get(listMapData, `${item.section}`), itemData => <li key={itemData.id} className="list-item text-hidden">
+                              <a href={itemData.webUrl} title={itemData.webTitle}> { itemData.webTitle } </a>
+                            </li>
+                          ) }
+                      </> }
+                    </ol>
+                  </>
+                }
+              </TabWidgetPanel>) }
+            </TabWidgetContent>
+          </TabWidget>
+
         </section>
       </main>
     </div>
