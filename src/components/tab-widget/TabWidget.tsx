@@ -47,7 +47,7 @@ export const TabWidget = memo<PropsWithChildren<ITabWidgetProps>>(function TabWi
           if (!isValidElement(child)) {
             return child;
           }
-          return cloneElement(child, {  });
+          return cloneElement(child, {});
         })}
       </div>
     </TabWidgetContext.Provider>

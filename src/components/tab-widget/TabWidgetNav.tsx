@@ -23,7 +23,7 @@ export const TabWidgetNav = memo<PropsWithChildren<ITabWidgetNavProps>>(function
         if (!isValidElement(child)) {
           return child;
         }
-        return cloneElement(child, {  }); //isActive, onClick
+        return cloneElement(child, {});
       })}
     </ul>
   );

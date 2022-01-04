@@ -21,7 +21,7 @@ export const TabWidgetContent = memo<PropsWithChildren<ITabWidgetNavProps>>(func
         if (!isValidElement(child)) {
           return child;
         }
-        return cloneElement(child, {  }); //isActive, onClick
+        return cloneElement(child, {});
       })}
     </div>
   </>);
