@@ -11,8 +11,8 @@ import React, {
 } from 'react'
 
 
-import { TabWidgetContext, ITabWidgetContext, defaultTabContext, ITabWidgetContextState } from './TabWidget.context';
 import { useStateWithCallbackLazy } from 'use-state-with-callback';
+import { TabWidgetContext, ITabWidgetContext, defaultTabContext, ITabWidgetContextState } from './TabWidget.context';
 
 interface ITabWidgetProps {
   active?: string,
