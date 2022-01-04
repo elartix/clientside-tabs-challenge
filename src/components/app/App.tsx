@@ -40,7 +40,7 @@ const App = memo(function App() {
     }
   }, [locationActiveTab, tabList])
 
-  const [{ data, loading, error }, fetchData ] = useAxios(
+  const [{ data, loading }, fetchData ] = useAxios(
     `http://content.guardianapis.com/${restoredActiveTab.section}?api-key=test`,
     { manual: true }
   )

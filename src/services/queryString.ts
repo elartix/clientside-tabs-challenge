@@ -11,7 +11,6 @@ export const setQueryStringWithoutPageReload = (qsValue: string | number) => {
   window.location.pathname +
   qsValue;
 
-  // @ts-ignore
   window.history.pushState({}, '', newUrl);
 };
 
