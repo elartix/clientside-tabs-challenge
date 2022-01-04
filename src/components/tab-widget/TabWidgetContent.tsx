@@ -8,8 +8,6 @@ import React, {
   PropsWithChildren
 } from 'react'
 
-import { ITabWidgetContext, TabWidgetContext } from './TabWidget.context';
-
 export interface ITabWidgetNavProps {
   className?: string;
 }
@@ -18,8 +16,6 @@ export const TabWidgetContent = memo<PropsWithChildren<ITabWidgetNavProps>>(func
   className,
   children
 }) {
-  // const { state } = useContext(TabWidgetContext) as ITabWidgetContext;
-
   return (<>
     <div className={cn('tab-widget__content', className)}>
       { Children.map(children, (child, index) => {

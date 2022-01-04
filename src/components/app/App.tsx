@@ -1,29 +1,18 @@
 import _ from 'lodash';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import cn from 'classnames';
+import useAxios from 'axios-hooks';
 import React, { memo, useCallback, useEffect, useMemo, useState } from 'react';
 
 import './App.scss';
 
 import { TabWidget } from '../tab-widget/TabWidget';
+import { useQueryString } from '../../services/hooks';
 import { TabWidgetNav } from '../tab-widget/TabWidgetNav';
 import { TabWidgetPanel } from '../tab-widget/TabWidgetPanel';
-import { TabWidgetNavItem, ITabWidgetNavItem } from '../tab-widget/TabWidgetNavItem';
 import { TabWidgetContent } from '../tab-widget/TabWidgetContent';
-import { defaultTabContextState, ITabWidgetContextState } from '../tab-widget/TabWidget.context';
-import { useQueryString } from '../../services/hooks';
-import useAxios from 'axios-hooks';
 import { useStateWithCallbackLazy } from 'use-state-with-callback';
-import cn from 'classnames';
-
-/*var getApiURL = function (section) {
-  return `http://content.guardianapis.com/${section}?api-key=test`;
-};
-
-var loadGuardianArticlesBySection = function (section) {
-  return fetch(getApiURL(section))
-    .then(response => response.json())
-    .then(content => content.response.results);
-};*/
+import { TabWidgetNavItem, ITabWidgetNavItem } from '../tab-widget/TabWidgetNavItem';
+import { defaultTabContextState, ITabWidgetContextState } from '../tab-widget/TabWidget.context';
 
 
 const THE_GUARDIAN_TABS_LIST = [
@@ -33,8 +22,7 @@ const THE_GUARDIAN_TABS_LIST = [
 ]
 
 const App = memo(function App() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [tabList, setTabList] = useState<ITabWidgetNavItem[]>(THE_GUARDIAN_TABS_LIST as ITabWidgetNavItem[]);
+  const [tabList] = useState<ITabWidgetNavItem[]>(THE_GUARDIAN_TABS_LIST as ITabWidgetNavItem[]);
   const [listMapData, setListMpaData] = useState({})
   const [locationActiveTab, setLocationActiveTab] = useQueryString('activeTab', undefined);
   const [currentTab, setCurrentTab] = useStateWithCallbackLazy<Partial<ITabWidgetContextState>>({})
@@ -99,7 +87,7 @@ const App = memo(function App() {
                   >
                   { _.isEmpty(_.get(listMapData, `${item.section}`, []))
                     ? <>
-                      {/*<span> There are no any news </span>*/}
+                      <span> There are no any news </span>
                     </>
                     : <>
                       <ol className={cn('list-data list-numbered', {

@@ -21,14 +21,6 @@ interface ITabWidgetProps {
 }
 
 export const TabWidget = memo<PropsWithChildren<ITabWidgetProps>>(function TabWidget ({ active, className, children, onTabChange}) {
-  // const defaultContextData = Object.assign({}, defaultTabContext, {
-  //   state: {
-  //     ...defaultTabContext.state,
-  //     activeTab: active,
-  //     section: (active || '').replace('tab_', '')
-  //   }
-  // })
-
   const [tabState, setTabState] = useStateWithCallbackLazy<ITabWidgetContext>(defaultTabContext)
 
   const handleTabChange = useCallback((data: ITabWidgetContextState) => {

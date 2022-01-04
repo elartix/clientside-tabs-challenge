@@ -22,7 +22,6 @@ export const TabWidgetNavItem = memo<ITabWidgetNavItem>(function TabWidgetNavIte
 
   const isActive = useMemo(
     () => {
-      // console.log(activeTab, id, `tab_${id}`, activeTab === `tab_${id}`)
       return activeTab === `tab_${id}`
     },
     [activeTab, id]
@@ -31,15 +30,12 @@ export const TabWidgetNavItem = memo<ITabWidgetNavItem>(function TabWidgetNavIte
 
   const handleTabItemClick = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement>) => {
-      // console.log(event.currentTarget)
       event.preventDefault();
 
       setTabState && setTabState((prevState) => {
         const newActiveId = `tab_${id}`;
-        // eslint-disable-next-line no-restricted-globals
-        // history.pushState({}, '', `?activeTab=${newActiveId}`);
 
-        const newState = {
+        return {
           ...prevState,
           state: {
             ...prevState.state,
@@ -47,7 +43,6 @@ export const TabWidgetNavItem = memo<ITabWidgetNavItem>(function TabWidgetNavIte
             activeTab: newActiveId
           }
         }
-        return newState
       }, (res: ITabWidgetContext) => {
         triggerTabChange && triggerTabChange(res.state);
       })

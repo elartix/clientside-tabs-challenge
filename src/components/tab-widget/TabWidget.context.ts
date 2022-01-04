@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { createContext, Dispatch, SetStateAction, useContext } from 'react';
 
 export interface ITabWidgetContextState {
@@ -13,8 +12,6 @@ export const defaultTabContextState: ITabWidgetContextState = {
 
 export interface ITabWidgetContext {
   state: ITabWidgetContextState;
-  // setTabState: Dispatch<SetStateAction<ITabWidgetContext>>;
-  // setTabState: Dispatch<SetStateActionCallback<ITabWidgetContext>>;
   setTabState: DispatchWithCallback<SetStateAction<ITabWidgetContext>>;
   triggerTabChange?: Dispatch<any>,
 }
